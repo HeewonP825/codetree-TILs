@@ -23,13 +23,20 @@ int main() {
         }
     }
 
-    int j, rank = 0;
+    int j, oddRank = 0, evenRank = 0;
     for(j=0; j<4; j++) {
-        if((judge[j][1] == 1) && (judge[j][0] > rank))
-            rank = judge[j][0];
+        if((judge[j][1] == 1) && (judge[j][0] > oddRank))
+            oddRank = judge[j][0];
+        else if((judge[j][1] == 0) && (judge[j][0] > evenRank))
+            evenRank = judge[j][0];
     }
 
-    printf("%d", rank);
+    if(oddRank != 0) {
+        printf("%d", oddRank);
+    }
+    else {
+        printf("%d", evenRank);
+    }
 
     return 0;
 }
