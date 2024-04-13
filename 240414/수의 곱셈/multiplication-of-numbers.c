@@ -5,14 +5,17 @@ int main() {
     int num[3];
     scanf("%d %d %d", &num[0], &num[1], &num[2]);
 
-    int array[4];
-    array[0] = num[0] * num[1];
-    array[1] = num[1] * num[2];
-    array[2] = num[0] * num[2];
-    array[3] = num[0] * num[1] * num[2];
+    int array[7];
+    array[0] = num[0];
+    array[1] = num[1];
+    array[2] = num[2];
+    array[3] = num[0] * num[1];
+    array[4] = num[1] * num[2];
+    array[5] = num[0] * num[2];
+    array[6] = num[0] * num[1] * num[2];
 
-    int i, judge[4][2] = { 0 };
-    for(i=0; i<4; i++) {
+    int i, judge[7][2] = { 0 };
+    for(i=0; i<7; i++) {
         if(array[i] % 2 == 0) {
             judge[i][0] = array[i];
             judge[i][1] = 0;
@@ -24,7 +27,7 @@ int main() {
     }
 
     int j, oddRank = 0, evenRank = 0;
-    for(j=0; j<4; j++) {
+    for(j=0; j<7; j++) {
         if((judge[j][1] == 1) && (judge[j][0] > oddRank))
             oddRank = judge[j][0];
         else if((judge[j][1] == 0) && (judge[j][0] > evenRank))
