@@ -4,7 +4,7 @@ fun main() {
     var closest = 200
     var above = -1
 
-    val numbers = readLine()!!.split(" ").map { it.toInt() }
+    val numbers = readLine()?.split(" ")?.mapNotNull { it.toIntOrNull() } ?: return
 
     for(num in numbers) {
         if(Math.abs(100 - num) < Math.abs(100 - closest)) {
