@@ -5,8 +5,8 @@ int main() {
     int n;
     scanf("%d", &n);
     
-    int closest = 200;  
-    int above = -1;     
+    int closest = 200;  // 200보다 큰 수 중에서 가장 작은 수로 초기화
+    int above = -1;     // 100 이상의 수 중에서 가장 작은 수로 초기화
 
     for (int i = 0; i < n; i++) {
         int num;
@@ -19,7 +19,7 @@ int main() {
         }
     }
 
-    printf("%d %d\n", closest, above);
+    printf("%d %d\n", closest, above == -1 ? -1 : above);
     
     return 0;
 }
