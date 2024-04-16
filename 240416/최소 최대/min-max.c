@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    int n, array[100];
+    int n;
 
     scanf("%d", &n);
+
+    int array[n];
 
     int i;
     for(i=0; i<n; i++) {
